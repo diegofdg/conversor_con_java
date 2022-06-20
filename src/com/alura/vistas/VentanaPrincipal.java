@@ -125,6 +125,56 @@ public class VentanaPrincipal {
 						continuaEjecucion();											
 					}
 				}				
+			} else if(opciones == "Conversor de Temperatura") {
+				String input = JOptionPane.showInputDialog(
+						"Ingresa la cantidad de grados que deseas convertir: "
+				);
+				
+				double numero = miCoordinador.validarNumero(input);
+				
+				String tipoConversion = (JOptionPane.showInputDialog(
+						null, 
+						"Elije una opción para convertir", 
+						"Conversor de Temperaturas", 
+						JOptionPane.QUESTION_MESSAGE, 
+						null, 
+						new Object[] {
+								"De Celsius a Fahrenheit",
+								"De Fahrenheit a Celsius",
+								"De Celsius a Kelvin",
+								"De Kelvin a Celsius",								
+						}, 
+						"Seleccion"
+				)).toString();
+				
+				if(tipoConversion == "De Celsius a Fahrenheit") {						
+					String resultado = miCoordinador.convertirCelsiusEnFahrenheit(numero);					
+					JOptionPane.showMessageDialog(null, input +"º Celsius equivalen a "+resultado +"º Fahrenheit");
+					
+					continuaEjecucion();									
+				}
+				
+				if(tipoConversion == "De Fahrenheit a Celsius") {						
+					String resultado = miCoordinador.convertirFahrenheitEnCelsius(numero);					
+					JOptionPane.showMessageDialog(null, input +"º Fahrenheit equivalen a "+resultado +"º Celsius");
+					
+					continuaEjecucion();									
+				}
+				
+				if(tipoConversion == "De Celsius a Kelvin") {						
+					String resultado = miCoordinador.convertirCelsiusEnKelvin(numero);					
+					JOptionPane.showMessageDialog(null, input +"º Celsius equivalen a "+resultado +"º Kelvin");
+					
+					continuaEjecucion();									
+				}
+				
+				if(tipoConversion == "De Kelvin a Celsius") {						
+					String resultado = miCoordinador.convertirKelvinEnCelsius(numero);					
+					JOptionPane.showMessageDialog(null, input +"º Celsius equivalen a "+resultado +"º Kelvin");
+					
+					continuaEjecucion();									
+				}
+				
 			}
 		}
 	}
