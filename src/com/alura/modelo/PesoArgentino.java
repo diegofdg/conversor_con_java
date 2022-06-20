@@ -1,13 +1,17 @@
-package com.alura.monedas;
+package com.alura.modelo;
 
 import java.text.DecimalFormat;
 
+import com.alura.controlador.Coordinador;
+
 public class PesoArgentino {
+	
 	private double cotizacionEnDolares = 122.8541;
 	private double cotizacionEnEuros = 129.1381;
 	private double cotizacionEnLibrasEsterlinas = 150.4717;
 	private double cotizacionEnYenJapones = 0.9095;
 	private double cotizacionEnWonSurcoreano = 0.0951;
+	Coordinador miCoordinador;
 	
 	public double getCotizacionEnDolares() {
 		return cotizacionEnDolares;
@@ -98,4 +102,8 @@ public class PesoArgentino {
         DecimalFormat decimalFormat =  new DecimalFormat(formato);
         return decimalFormat.format(resultado);
 	}
+
+	public void setCoordinador(Coordinador miCoordinador) {
+		this.miCoordinador = miCoordinador;		
+	}	
 }

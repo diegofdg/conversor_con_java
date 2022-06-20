@@ -1,6 +1,10 @@
-package com.alura.funciones;
+package com.alura.modelo;
+
+import com.alura.controlador.Coordinador;
 
 public class Funciones {
+	
+	Coordinador miCoordinador;
 	
 	public double validarNumero(String input) {
         try {
@@ -8,5 +12,9 @@ public class Funciones {
         } catch(NumberFormatException e) {
             return 0;
         }
+	}
+
+	public void setCoordinador(Coordinador miCoordinador) {
+		this.miCoordinador = miCoordinador;		
 	}
 }
