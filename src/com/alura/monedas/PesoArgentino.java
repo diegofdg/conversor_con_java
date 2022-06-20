@@ -3,11 +3,11 @@ package com.alura.monedas;
 import java.text.DecimalFormat;
 
 public class PesoArgentino {
-	private double cotizacionEnDolares = 0.0081;
-	private double cotizacionEnEuros = 0.0078;
-	private double cotizacionEnLibrasEsterlinas = 0.0066;
-	private double cotizacionEnYenJapones = 1.10;
-	private double cotizacionEnWonSurcoreano = 10.52;
+	private double cotizacionEnDolares = 122.8541;
+	private double cotizacionEnEuros = 129.1381;
+	private double cotizacionEnLibrasEsterlinas = 150.4717;
+	private double cotizacionEnYenJapones = 0.9095;
+	private double cotizacionEnWonSurcoreano = 0.0951;
 	
 	public double getCotizacionEnDolares() {
 		return cotizacionEnDolares;
@@ -30,9 +30,72 @@ public class PesoArgentino {
 	}
 
 	public String convertirPesosADolares(double input) {		
-		double resultado = input * this.getCotizacionEnDolares();		
+		double resultado = input / this.getCotizacionEnDolares();		
         String formato = "#.###";
         DecimalFormat decimalFormat =  new DecimalFormat(formato);
         return decimalFormat.format(resultado);
 	}	
+	
+	public String convertirDolaresAPesos(double input) {		
+		double resultado = input * this.getCotizacionEnDolares();		
+        String formato = "#.###";
+        DecimalFormat decimalFormat =  new DecimalFormat(formato);
+        return decimalFormat.format(resultado);
+	}
+
+	public String convertirPesosAEuros(double input) {
+		double resultado = input / this.getCotizacionEnEuros();		
+        String formato = "#.###";
+        DecimalFormat decimalFormat =  new DecimalFormat(formato);
+        return decimalFormat.format(resultado);
+	}
+	
+	public String convertirEurosAPesos(double input) {		
+		double resultado = input * this.getCotizacionEnEuros();		
+        String formato = "#.###";
+        DecimalFormat decimalFormat =  new DecimalFormat(formato);
+        return decimalFormat.format(resultado);
+	}
+	
+	public String convertirPesosALibrasEsterlinas(double input) {
+		double resultado = input / this.getCotizacionEnLibrasEsterlinas();		
+        String formato = "#.###";
+        DecimalFormat decimalFormat =  new DecimalFormat(formato);
+        return decimalFormat.format(resultado);
+	}
+	
+	public String convertirLibrasEsterlinasAPesos(double input) {		
+		double resultado = input * this.getCotizacionEnLibrasEsterlinas();		
+        String formato = "#.###";
+        DecimalFormat decimalFormat =  new DecimalFormat(formato);
+        return decimalFormat.format(resultado);
+	}
+	
+	public String convertirPesosAYenJapones(double input) {
+		double resultado = input / this.getCotizacionEnYenJapones();		
+        String formato = "#.###";
+        DecimalFormat decimalFormat =  new DecimalFormat(formato);
+        return decimalFormat.format(resultado);
+	}
+	
+	public String convertirYenJaponesAPesos(double input) {		
+		double resultado = input * this.getCotizacionEnYenJapones();		
+        String formato = "#.###";
+        DecimalFormat decimalFormat =  new DecimalFormat(formato);
+        return decimalFormat.format(resultado);
+	}
+	
+	public String convertirPesosAWonSurcoreano(double input) {
+		double resultado = input / this.getCotizacionEnWonSurcoreano();		
+        String formato = "#.###";
+        DecimalFormat decimalFormat =  new DecimalFormat(formato);
+        return decimalFormat.format(resultado);
+	}
+	
+	public String convertirWonSurcoreanoAPesos(double input) {		
+		double resultado = input * this.getCotizacionEnWonSurcoreano();		
+        String formato = "#.###";
+        DecimalFormat decimalFormat =  new DecimalFormat(formato);
+        return decimalFormat.format(resultado);
+	}
 }
