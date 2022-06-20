@@ -1,5 +1,7 @@
 package com.alura.modelo;
 
+import java.text.DecimalFormat;
+
 import com.alura.controlador.Coordinador;
 
 public class Funciones {
@@ -16,5 +18,11 @@ public class Funciones {
 
 	public void setCoordinador(Coordinador miCoordinador) {
 		this.miCoordinador = miCoordinador;		
+	}
+	
+	public String formatoResultado(double resultado) {
+		String formato = "#.###";
+        DecimalFormat decimalFormat =  new DecimalFormat(formato);
+        return decimalFormat.format(resultado);		
 	}
 }

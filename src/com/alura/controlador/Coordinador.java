@@ -2,6 +2,7 @@ package com.alura.controlador;
 
 import com.alura.modelo.Funciones;
 import com.alura.modelo.GradosCelsius;
+import com.alura.modelo.Kilometros;
 import com.alura.modelo.PesoArgentino;
 import com.alura.vistas.VentanaPrincipal;
 
@@ -11,6 +12,7 @@ public class Coordinador {
 	private Funciones misFunciones;
 	private PesoArgentino miPesoArgentino;
 	private GradosCelsius misGradosCelsius;
+	private Kilometros misKilometros;
 	
 	public void setVentanaPrincipal(VentanaPrincipal miVentanaPrincipal) {
 		this.miVentanaPrincipal = miVentanaPrincipal;		
@@ -90,5 +92,38 @@ public class Coordinador {
 
 	public String convertirKelvinEnCelsius(double numero) {
 		return misGradosCelsius.convertirKelvinEnCelsius(numero);
+	}
+
+	public void setMisKilometros(Kilometros misKilometros) {
+		this.misKilometros = misKilometros;
+		
+	}
+
+	public String convertirKilometrosAMetros(double numero) {
+		return misKilometros.convertirKilometrosAMetros(numero);
+	}
+
+	public String convertirKilometrosAMillas(double numero) {
+		return misKilometros.convertirKilometrosAMillas(numero);
+	}
+
+	public String convertirKilometrosAYardas(double numero) {
+		return misKilometros.convertirKilometrosAYardas(numero);
+	}
+
+	public String convertirMetrosAKilometros(double numero) {
+		return misKilometros.convertirMetrosAKilometros(numero);
+	}
+
+	public String convertirMillasAKilometros(double numero) {
+		return misKilometros.convertirMillasAKilometros(numero);
+	}
+
+	public String convertirYardasAKilometros(double numero) {
+		return misKilometros.convertirYardasAKilometros(numero);
+	}
+
+	public String formatoResultado(double resultado) {
+		return misFunciones.formatoResultado(resultado);
 	}
 }

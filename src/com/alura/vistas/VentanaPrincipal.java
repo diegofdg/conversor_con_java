@@ -124,7 +124,10 @@ public class VentanaPrincipal {
 						
 						continuaEjecucion();											
 					}
-				}				
+				} else {
+					JOptionPane.showMessageDialog(null, "Ingresa un número válido");					
+				}
+				
 			} else if(opciones == "Conversor de Temperatura") {
 				String input = JOptionPane.showInputDialog(
 						"Ingresa la cantidad de grados que deseas convertir: "
@@ -132,49 +135,125 @@ public class VentanaPrincipal {
 				
 				double numero = miCoordinador.validarNumero(input);
 				
-				String tipoConversion = (JOptionPane.showInputDialog(
-						null, 
-						"Elije una opción para convertir", 
-						"Conversor de Temperaturas", 
-						JOptionPane.QUESTION_MESSAGE, 
-						null, 
-						new Object[] {
-								"De Celsius a Fahrenheit",
-								"De Fahrenheit a Celsius",
-								"De Celsius a Kelvin",
-								"De Kelvin a Celsius",								
-						}, 
-						"Seleccion"
-				)).toString();
-				
-				if(tipoConversion == "De Celsius a Fahrenheit") {						
-					String resultado = miCoordinador.convertirCelsiusEnFahrenheit(numero);					
-					JOptionPane.showMessageDialog(null, input +"º Celsius equivalen a "+resultado +"º Fahrenheit");
+				if( numero != 0 ) {
+					String tipoConversion = (JOptionPane.showInputDialog(
+							null, 
+							"Elije una opción para convertir", 
+							"Conversor de Temperaturas", 
+							JOptionPane.QUESTION_MESSAGE, 
+							null, 
+							new Object[] {
+									"De Celsius a Fahrenheit",
+									"De Fahrenheit a Celsius",
+									"De Celsius a Kelvin",
+									"De Kelvin a Celsius",								
+							}, 
+							"Seleccion"
+					)).toString();
 					
-					continuaEjecucion();									
+					if(tipoConversion == "De Celsius a Fahrenheit") {						
+						String resultado = miCoordinador.convertirCelsiusEnFahrenheit(numero);					
+						JOptionPane.showMessageDialog(null, input +"º Celsius equivalen a "+resultado +"º Fahrenheit");
+						
+						continuaEjecucion();									
+					}
+					
+					if(tipoConversion == "De Fahrenheit a Celsius") {						
+						String resultado = miCoordinador.convertirFahrenheitEnCelsius(numero);					
+						JOptionPane.showMessageDialog(null, input +"º Fahrenheit equivalen a "+resultado +"º Celsius");
+						
+						continuaEjecucion();									
+					}
+					
+					if(tipoConversion == "De Celsius a Kelvin") {						
+						String resultado = miCoordinador.convertirCelsiusEnKelvin(numero);					
+						JOptionPane.showMessageDialog(null, input +"º Celsius equivalen a "+resultado +"º Kelvin");
+						
+						continuaEjecucion();									
+					}
+					
+					if(tipoConversion == "De Kelvin a Celsius") {						
+						String resultado = miCoordinador.convertirKelvinEnCelsius(numero);					
+						JOptionPane.showMessageDialog(null, input +"º Celsius equivalen a "+resultado +"º Kelvin");
+						
+						continuaEjecucion();									
+					}
+					
+				} else {
+					JOptionPane.showMessageDialog(null, "Ingresa un número válido");					
 				}
 				
-				if(tipoConversion == "De Fahrenheit a Celsius") {						
-					String resultado = miCoordinador.convertirFahrenheitEnCelsius(numero);					
-					JOptionPane.showMessageDialog(null, input +"º Fahrenheit equivalen a "+resultado +"º Celsius");
-					
-					continuaEjecucion();									
-				}
 				
-				if(tipoConversion == "De Celsius a Kelvin") {						
-					String resultado = miCoordinador.convertirCelsiusEnKelvin(numero);					
-					JOptionPane.showMessageDialog(null, input +"º Celsius equivalen a "+resultado +"º Kelvin");
-					
-					continuaEjecucion();									
-				}
 				
-				if(tipoConversion == "De Kelvin a Celsius") {						
-					String resultado = miCoordinador.convertirKelvinEnCelsius(numero);					
-					JOptionPane.showMessageDialog(null, input +"º Celsius equivalen a "+resultado +"º Kelvin");
-					
-					continuaEjecucion();									
-				}
+			} else if(opciones == "Conversor de Longitud") {
+				String input = JOptionPane.showInputDialog(
+						"Ingresa la longitud que deseas convertir: "
+				);
+				double numero = miCoordinador.validarNumero(input);
 				
+				if( numero > 0 ) {
+					String tipoConversion = (JOptionPane.showInputDialog(
+							null, 
+							"Elije una opción para convertir", 
+							"Conversor de Longitudes", 
+							JOptionPane.QUESTION_MESSAGE, 
+							null, 
+							new Object[] {
+									"De Kilómetros a Metros",		
+									"De Kilómetros a Millas",
+									"De Kilómetros a Yardas",
+									"De Metros a Kilómetros",
+									"De Millas a Kilómetros",
+									"De Yardas a Kilómetros",
+							}, 
+							"Seleccion"
+					)).toString();
+					
+					if(tipoConversion == "De Kilómetros a Metros") {						
+						String resultado = miCoordinador.convertirKilometrosAMetros(numero);					
+						JOptionPane.showMessageDialog(null, input +" Kilómetros equivalen a "+resultado +" Metros");
+						
+						continuaEjecucion();									
+					}
+					
+					if(tipoConversion == "De Kilómetros a Millas") {
+						String resultado = miCoordinador.convertirKilometrosAMillas(numero);					
+						JOptionPane.showMessageDialog(null, input +" Kilómetros equivalen a "+resultado +" Millas");
+						
+						continuaEjecucion();									
+					}
+					
+					if(tipoConversion == "De Kilómetros a Yardas") {
+						String resultado = miCoordinador.convertirKilometrosAYardas(numero);					
+						JOptionPane.showMessageDialog(null, input +" Kilómetros equivalen a "+resultado +" Yardas");
+						
+						continuaEjecucion();									
+					}
+					
+					if(tipoConversion == "De Metros a Kilómetros") {						
+						String resultado = miCoordinador.convertirMetrosAKilometros(numero);					
+						JOptionPane.showMessageDialog(null, input +" Metros equivalen a "+resultado +" Kilómetros");
+						
+						continuaEjecucion();									
+					}
+					
+					if(tipoConversion == "De Millas a Kilómetros") {						
+						String resultado = miCoordinador.convertirMillasAKilometros(numero);					
+						JOptionPane.showMessageDialog(null, input +" Millas equivalen a "+resultado +" Kilómetros");
+						
+						continuaEjecucion();									
+					}
+					
+					if(tipoConversion == "De Yardas a Kilómetros") {						
+						String resultado = miCoordinador.convertirYardasAKilometros(numero);					
+						JOptionPane.showMessageDialog(null, input +" Yardas equivalen a "+resultado +" Kilómetros");
+						
+						continuaEjecucion();									
+					}
+					
+				} else {
+					JOptionPane.showMessageDialog(null, "Ingresa un número válido");					
+				}
 			}
 		}
 	}
