@@ -1,8 +1,8 @@
 package com.alura.controlador;
 
 import com.alura.modelo.Funciones;
-import com.alura.modelo.GradosCelsius;
-import com.alura.modelo.Kilometros;
+import com.alura.modelo.GradoCelsius;
+import com.alura.modelo.Kilometro;
 import com.alura.modelo.PesoArgentino;
 import com.alura.vistas.VentanaPrincipal;
 
@@ -11,31 +11,39 @@ public class Coordinador {
 	private VentanaPrincipal miVentanaPrincipal;
 	private Funciones misFunciones;
 	private PesoArgentino miPesoArgentino;
-	private GradosCelsius misGradosCelsius;
-	private Kilometros misKilometros;
+	private GradoCelsius miGradoCelsius;
+	private Kilometro miKilometro;
 	
 	public void setVentanaPrincipal(VentanaPrincipal miVentanaPrincipal) {
-		this.miVentanaPrincipal = miVentanaPrincipal;		
+		this.miVentanaPrincipal = miVentanaPrincipal;
 	}
 	
+	public void setMisFunciones(Funciones misFunciones) {
+		this.misFunciones = misFunciones;
+	}
+
 	public void setMiPesoArgentino(PesoArgentino miPesoArgentino) {
-		this.miPesoArgentino = miPesoArgentino;		
+		this.miPesoArgentino = miPesoArgentino;
 	}
 	
-	public void setMisGradosCelsius(GradosCelsius misGradosCelsius) {
-		this.misGradosCelsius = misGradosCelsius;		
-	}	
+	public void setMisGradosCelsius(GradoCelsius miGradoCelsius) {
+		this.miGradoCelsius = miGradoCelsius;
+	}
+	
+	public void setMisKilometros(Kilometro miKilometro) {
+		this.miKilometro = miKilometro;
+	}
 	
 	public void mostrarVentanaPrincipal() {
 		miVentanaPrincipal.iniciarConversor();		
 	}
 
-	public void setMisFunciones(Funciones misFunciones) {
-		this.misFunciones = misFunciones;		
-	}
-
 	public double validarNumero(String input) {
 		return misFunciones.validarNumero(input);
+	}
+	
+	public String formatoResultado(double resultado) {
+		return misFunciones.formatoResultado(resultado);
 	}
 	
 	public String convertirPesosADolares(double numero) {
@@ -79,51 +87,42 @@ public class Coordinador {
 	}
 	
 	public String convertirCelsiusEnFahrenheit(double numero) {
-		return misGradosCelsius.convertirCelsiusEnFahrenheit(numero);
+		return miGradoCelsius.convertirCelsiusEnFahrenheit(numero);
+	}
+	
+	public String convertirCelsiusEnKelvin(double numero) {
+		return miGradoCelsius.convertirCelsiusEnKelvin(numero);
 	}
 	
 	public String convertirFahrenheitEnCelsius(double numero) {
-		return misGradosCelsius.convertirFahrenheitEnCelsius(numero);
+		return miGradoCelsius.convertirFahrenheitEnCelsius(numero);
 	}
-
-	public String convertirCelsiusEnKelvin(double numero) {
-		return misGradosCelsius.convertirCelsiusEnKelvin(numero);
-	}
-
+	
 	public String convertirKelvinEnCelsius(double numero) {
-		return misGradosCelsius.convertirKelvinEnCelsius(numero);
-	}
-
-	public void setMisKilometros(Kilometros misKilometros) {
-		this.misKilometros = misKilometros;
-		
+		return miGradoCelsius.convertirKelvinEnCelsius(numero);
 	}
 
 	public String convertirKilometrosAMetros(double numero) {
-		return misKilometros.convertirKilometrosAMetros(numero);
+		return miKilometro.convertirKilometrosAMetros(numero);
 	}
 
 	public String convertirKilometrosAMillas(double numero) {
-		return misKilometros.convertirKilometrosAMillas(numero);
+		return miKilometro.convertirKilometrosAMillas(numero);
 	}
 
 	public String convertirKilometrosAYardas(double numero) {
-		return misKilometros.convertirKilometrosAYardas(numero);
+		return miKilometro.convertirKilometrosAYardas(numero);
 	}
 
 	public String convertirMetrosAKilometros(double numero) {
-		return misKilometros.convertirMetrosAKilometros(numero);
+		return miKilometro.convertirMetrosAKilometros(numero);
 	}
 
 	public String convertirMillasAKilometros(double numero) {
-		return misKilometros.convertirMillasAKilometros(numero);
+		return miKilometro.convertirMillasAKilometros(numero);
 	}
 
 	public String convertirYardasAKilometros(double numero) {
-		return misKilometros.convertirYardasAKilometros(numero);
-	}
-
-	public String formatoResultado(double resultado) {
-		return misFunciones.formatoResultado(resultado);
+		return miKilometro.convertirYardasAKilometros(numero);
 	}
 }
